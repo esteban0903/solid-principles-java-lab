@@ -40,3 +40,18 @@ Despues: separamos los comportamientos en interfaces específicas según la func
 Patrones aplicados:
 - Liskov Substitution Principle (LSP), permitiendo que las clases puedan sustituir correctamente a sus abstracciones sin romper el comportamiento esperado.
 - Interface Segregation Principle (ISP), dividiendo responsabilidades en interfaces pequeñas y específicas.
+
+
+## Punto 4 - Interface Segregation Principle (ISP)
+
+Antes: La interfaz `Worker` obligaba a todas las clases a implementar los métodos `work()` y `eat()`, aunque no todos los trabajadores necesitaban ambos comportamientos. En el caso de `Developer`, el método `eat()` no era necesario y terminaba lanzando una excepción, generando una implementación forzada e incorrecta.
+
+Despues: se dividió la interfaz en interfaces más pequeñas y específicas según el comportamiento:
+- Trabajo: `Workable`
+- Alimentacion: `Eatable`
+
+Cada clase implementa unicamente las interfaces que realmente necesita, evitando metodos innecesarios y eliminando implementaciones forzadas.
+
+Patrones aplicados:
+- Interface Segregation Principle (ISP), dividiendo una interfaz grande en interfaces ms pequeñas y especIficas para evitar que las clases dependan de metodos que no utilizan.
+- Liskov Substitution Principle (LSP), asegurando que ninguna clase tenga que lanzar excepciones por mEtodos que no puede soportar.
