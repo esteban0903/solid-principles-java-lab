@@ -55,3 +55,15 @@ Cada clase implementa unicamente las interfaces que realmente necesita, evitando
 Patrones aplicados:
 - Interface Segregation Principle (ISP), dividiendo una interfaz grande en interfaces ms pequeñas y especIficas para evitar que las clases dependan de metodos que no utilizan.
 - Liskov Substitution Principle (LSP), asegurando que ninguna clase tenga que lanzar excepciones por mEtodos que no puede soportar.
+
+## Punto 5 - Dependency Inversion Principle (DIP)
+
+Antes: `OrderProcessor` dependia directamente de `MySQLDatabase`.
+
+Despues: se definio la abstraccion `Database` y `OrderProcessor` recibe la implementacion por constructor.
+- Abstraccion: `Database`
+- Implementacion concreta: `MySQLDatabase`
+
+Patrones aplicados:
+- Dependency Inversion Principle (DIP), el modulo de alto nivel depende de una abstraccion y no de una clase concreta.
+- Dependency Injection (Constructor Injection), se inyecta la dependencia desde afuera.
